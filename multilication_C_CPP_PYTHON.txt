@@ -40,3 +40,13 @@ for x range(1,10):
    print("")
    
  // End
+
+// Python 
+# x = 437
+# print(x%10)   //个位
+# print(x//10%10)  //十位
+# print(x//100)  //百位
+import math
+for x in range(100,1000):
+    if (pow((x//100),3)+pow((x//10%10),3)+pow((x%10),3)==x):
+        print(x)
