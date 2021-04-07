@@ -1,0 +1,74 @@
+// Pthon 3.9
+import multiprocessing
+import time
+
+def Sing():
+    starttime = time.time()
+    for i in range(5):
+        print('%2d Sing...'%i)
+        time.sleep(0.2)
+    print(time.time()-starttime)
+  
+def Dance():
+    sttime = time.time()
+    for i in range(5):
+        print('{} Dance ...'.format(i))
+        time.sleep(0.3)
+     print(time.time()-sttime)
+     
+if __name__ =='__main__':
+    //Sing()
+    //Dance()
+    p1 = multiprocessing.Process(target=Sing)
+    p2 = multiprocessing.Process(target=Dance)
+    
+    p1.start()
+    p2.start()
+    
+ // Python End
+ 
+ // C++ ===================================
+ 
+ #include <utility>
+ #include <stdio.h>
+ 
+ // fork() 
+ 
+ int main(int argc,char const *argc[])
+ {
+    // Create first child process
+    int n1 = fork();
+    
+    // Create second child process
+    int n2 = fork();
+    
+  if (n1 > 0 && n2 > 0) {
+		printf("parent\n");
+		printf("%d %d \n", n1, n2);
+		printf(" my id is %d \n", getpid());
+    printf(" my parentid is %d \n", getppid());
+	}
+	else if (n1 == 0 && n2 > 0)
+	{
+		printf("First child\n");
+		printf("%d %d \n", n1, n2);
+		printf("my id is %d \n", getpid());
+    printf(" my parentid is %d \n", getppid());
+	}
+	else if (n1 > 0 && n2 == 0)
+	{
+		printf("Second child\n");
+		printf("%d %d \n", n1, n2);
+		printf("my id is %d \n", getpid());
+    printf(" my parentid is %d \n", getppid());
+	}
+	else {
+		printf("third child\n");
+		printf("%d %d \n", n1, n2);
+		printf(" my id is %d \n", getpid());
+    printf(" my parentid is %d \n", getppid());
+	}
+  
+  return 0;
+    
+ }
