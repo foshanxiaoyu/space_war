@@ -33,6 +33,9 @@ if __name__ =='__main__':
  #include <stdio.h>
  
  // fork() 
+ // Negative Value: creation of a child process was unsuccessful.
+ // Zero: Returned to the newly created child process.
+ // Positive value: Returned to parent or caller. The value contains process ID of newly created child process.
  
  int main(int argc,char const *argc[])
  {
